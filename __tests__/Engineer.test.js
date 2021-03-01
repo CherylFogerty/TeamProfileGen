@@ -1,0 +1,44 @@
+const Engineer = require("../lib/Employee");
+
+class Engineer extends Employee {
+    constructor (name, id, email, github) {
+        super(name, id, email);
+        this.github = github;
+    }
+[({
+engineer(getEmployeeName);,
+engineer(getID);,
+engineer(getEmail);,
+engineer(getRole);
+})]
+
+    getRole() {
+        return this.engineer;
+    }
+    getGithub() {
+        return this.github;
+    }
+}
+
+test("gets employee's properties as an object", () => {
+    const name = 'cher'
+    const Employee = new Employee(name);
+})
+test("gets employee's properties as an object", () => {
+    const ID = '15793'
+    const Employee = new Employee(ID);
+})
+test("gets employee's properties as an object", () => {
+    const name = 'cher@gmail.com'
+    const Employee = new Employee(email);
+})
+test("gets employee's properties as an object", () => {
+    const name = 'role'
+    const Employee = new Employee(employee);
+
+    expect(employee.get.getEmployeeName()).toHaveProperty('cher');
+    expect(employee.get.getEmail()).toHaveProperty('email');
+    expect(employee.get.getRole()).toHaveProperty('employee');
+})
+
+module.exports = Engineer; 
