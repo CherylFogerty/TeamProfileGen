@@ -1,44 +1,41 @@
-const Intern = require("../lib/Employee");
+const { TestScheduler } = require('jest')
+const Intern = require('../lib/Intern')
 
-class Intern extends Employee {
-    constructor (name, id, email, github) {
-        super(name, id, email);
-        this.github = github;
-    }
-[({
-intern(getEmployeeName);,
-intern(getID);,
-intern(getEmail);,
-intern(getRole);
-})]
+test('creates an intern object', () => {
+    const intern = new Intern('Cheryl', '123', 'cfogerty43@gmail.com', 'Vanderbilt');
 
-    getRole() {
-        return this.intern;
-    }
-    getSchool() {
-        return this.school;
-    }
-}
+    expect(intern.name).toBe('Cheryl');
+    expect(intern.id).toBe('123');
+    expect(intern.email).toBe('cfogerty43@gmail.com');
+    expect(intern.school).toBe('Vanderbilt');
+});
 
-test("gets employee's properties as an object", () => {
-    const name = 'cher'
-    const Employee = new Employee(name);
-})
-test("gets employee's properties as an object", () => {
-    const ID = '15793'
-    const Employee = new Employee(ID);
-})
-test("gets employee's properties as an object", () => {
-    const name = 'cher@gmail.com'
-    const Employee = new Employee(email);
-})
-test("gets employee's properties as an object", () => {
-    const name = 'role'
-    const Employee = new Employee(employee);
+test("returns intern's name", () => {
+    const intern = new Intern('Cheryl', '123', 'cfogerty43@gmail.com', 'Vanderbilt');
+    
+    expect(intern.getName()).toEqual(expect.stringContaining('Cheryl'));
+});
 
-    expect(employee.get.getEmployeeName()).toHaveProperty('cher');
-    expect(employee.get.getEmail()).toHaveProperty('email');
-    expect(employee.get.getRole()).toHaveProperty('employee');
-})
+test("returns intern's id", () => {
+    const intern = new Intern('Cheryl', '123', 'cfogerty43@gmail.com', 'Vanderbilt');
 
-module.exports = Intern; 
+    expect(intern.getId()).toEqual(expect.stringContaining('123'));
+});
+
+test("returns intern's email", () => {
+    const intern = new Intern('Cheryl', '123', 'cfogerty43@gmail.com', 'Vanderbilt');
+    
+    expect(intern.getEmail()).toEqual(expect.stringContaining('cfogerty43@gmail.com'));
+});
+
+test("returns intern's role", () => {
+    const intern = new Intern('Cheryl', '123', 'cfogerty43@gmail.com', 'Vanderbilt');
+    
+    expect(intern.getRole()).toEqual(expect.stringContaining('Intern'));
+});
+
+test("returns intern's school", () => {
+    const intern = new Intern('Cheryl', '123', 'cfogerty43@gmail.com', 'Vanderbilt');
+    
+    expect(intern.getSchool()).toEqual(expect.stringContaining('Vanderbilt'));
+});

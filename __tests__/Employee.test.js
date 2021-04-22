@@ -1,33 +1,34 @@
-const Employee = require("../lib/Employee");
+const { TestScheduler } = require('jest')
+const Employee = require('../lib/Employee')
 
-[({
-employee(getEmployeeName);,
-employee(getID);,
-employee(getEmail);,
-employee(getRole);
-})]
+test('creates an employee object', () => {
+    const employee = new Employee('Cheryl', '123', 'cfogerty43@gmail.com');
 
+    expect(employee.name).toBe('Cheryl');
+    expect(employee.id).toBe('123');
+    expect(employee.email).toBe('cfogerty43@gmail.com');
+});
 
+test("returns employee's name", () => {
+    const employee = new Employee('Cheryl', '123', 'cfogerty43@gmail.com');
+    
+    expect(employee.getName()).toEqual(expect.stringContaining('Cheryl'));
+});
 
-test("gets employee's properties as an object", () => {
-    const name = 'cher'
-    const Employee = new Employee(name);
-})
-test("gets employee's properties as an object", () => {
-    const ID = '15793'
-    const Employee = new Employee(ID);
-})
-test("gets employee's properties as an object", () => {
-    const name = 'cher@gmail.com'
-    const Employee = new Employee(email);
-})
-test("gets employee's properties as an object", () => {
-    const name = 'role'
-    const Employee = new Employee(employee);
+test("returns employee's id", () => {
+    const employee = new Employee('Cheryl', '123', 'cfogerty43@gmail.com');
 
-    expect(employee.get.getEmployeeName()).toHaveProperty('cher');
-    expect(employee.get.getEmail()).toHaveProperty('email');
-    expect(employee.get.getRole()).toHaveProperty('employee');
-})
+    expect(employee.getId()).toEqual(expect.stringContaining('123'));
+});
 
-module.exports = Employee; 
+test("returns employee's email", () => {
+    const employee = new Employee('Cheryl', '123', 'cfogerty43@gmail.com');
+    
+    expect(employee.getEmail()).toEqual(expect.stringContaining('cfogerty43@gmail.com'));
+});
+
+test("returns employee's role", () => {
+    const employee = new Employee('Cheryl', '123', 'cfogerty43@gmail.com');
+    
+    expect(employee.getRole()).toEqual(expect.stringContaining('Employee'));
+});
