@@ -2,12 +2,12 @@ const { TestScheduler } = require('jest')
 const Engineer = require('../lib/Engineer')
 
 test('creates an engineer object', () => {
-    const engineer = new Engineer('Cher', '123', 'cfogerty43@gmail.com', 'Cher');
+    const engineer = new Engineer('CherylFogerty', '123', 'cfogerty43@gmail.com', 'CherylFogerty');
 
-    expect(engineer.name).toBe('Cher');
+    expect(engineer.name).toBe('CherylFogerty');
     expect(engineer.id).toBe('123');
     expect(engineer.email).toBe('cfogerty43@gmail.com');
-    expect(engineer.github).toBe('cherylfogerty');
+    expect(engineer.github).toBe('CherylFogerty');
 });
 
 test("returns engineer's name", () => {
@@ -17,7 +17,7 @@ test("returns engineer's name", () => {
 });
 
 test("returns engineer's id", () => {
-    const engineer = new Engineer('Cher', '123', 'cfogerty43@gmail.com', 'cherylfogerty');
+    const engineer = new Engineer('Cheryl', '123', 'cfogerty43@gmail.com', 'CherylFogerty');
 
     expect(engineer.getId()).toEqual(expect.stringContaining('123'));
 });
